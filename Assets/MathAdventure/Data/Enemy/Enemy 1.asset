@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af78b9bc92f17944095370bdc1361d1c, type: 3}
+  m_Name: Enemy 1
+  m_EditorClassIdentifier: 
+  name: Enemy 1
+  side: 1
+  icon: {fileID: 21300000, guid: 0dbbb771461c65244b1585b0758c58fd, type: 3}
+  prefabs: {fileID: 8428953104430432539, guid: 764ad3a1d6bfe374cbf5cddde3f9cd1e, type: 3}
+  properties:
+    HP: 40
+    attackDemage: 10
+    attackInterval: 3

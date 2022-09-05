@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af78b9bc92f17944095370bdc1361d1c, type: 3}
+  m_Name: Hero1
+  m_EditorClassIdentifier: 
+  name: Red
+  side: 0
+  icon: {fileID: 21300000, guid: a964a1b5a5437c54dbedf4d9741b6ad7, type: 3}
+  prefabs: {fileID: 7418300674265779697, guid: 7dde7cb0208b67b4e91c8873c9379bf7, type: 3}
+  properties:
+    HP: 100
+    attackDemage: 20
+    attackInterval: 3
