@@ -87,8 +87,6 @@ public class GameController : MonoBehaviour
         intervalCorotine = StartCoroutine(AutoPlay());
     }
 
-    void StartGame(){
-    }
     IEnumerator AutoPlay(){
         yield return new WaitForSeconds((float)intervalIncrease/10);
         intervalPlay += intervalIncrease;
