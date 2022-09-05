@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     List<GameObject> charPlaying;
     int intervalPlay = 0;
-    int intervalIncrease = 2;
+    int intervalIncrease = 2; //in milisecond
     Coroutine intervalCorotine;
     
     [Space]
