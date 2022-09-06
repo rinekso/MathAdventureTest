@@ -46,4 +46,7 @@ public class HPScript : MonoBehaviour
             currentValue += _val;
         SetUIHP();
     }
+    public float GetCurrentValueHP(){
+        return currentValue;
+    }
 }

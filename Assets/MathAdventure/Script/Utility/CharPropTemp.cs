@@ -66,6 +66,7 @@ public class CharPropTemp : MonoBehaviour
 
         animator.SetTrigger("Attack");
         target.GetComponent<CharPropTemp>().hPScript.DecreaseVal(data.properties.attackDemage);
+        GameController.instance.CheckIncreaseAttack(this, target.GetComponent<CharPropTemp>(), 10);
         yield return new WaitForSeconds(1);
 
         // Get back to position

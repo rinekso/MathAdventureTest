@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
 
         // Spawn Hero
         GameObject goHero = Instantiate(heroData.prefabs, heroLocation.GetChild(1));
-        goHero.GetComponent<CharPropTemp>().data = heroData;
+        goHero.GetComponent<CharPropTemp>().data = Instantiate(heroData);
 
         charPlaying.Add(goHero);
 
@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < levelData.levels[currentLevel].enemySlot.Count; i++)
         {
             GameObject go = Instantiate(levelData.levels[currentLevel].enemySlot[i].prefabs,enemyLocation.GetChild(i));
-            go.GetComponent<CharPropTemp>().data = levelData.levels[currentLevel].enemySlot[i];
+            go.GetComponent<CharPropTemp>().data = Instantiate(levelData.levels[currentLevel].enemySlot[i]);
 
             charPlaying.Add(go);
         }
@@ -130,5 +130,10 @@ public class GameController : MonoBehaviour
             charPlaying.Find(x => x == target)
         );
         Destroy(target);
+    }
+    public void CheckIncreaseAttack(CharPropTemp _attacker,CharPropTemp _target, float increase){
+        // if target Die get increase attack demage
+        if(_target.hPScript.GetCurrentValueHP() <= 0)
+            _attacker.data.properties.attackDemage += increase;
     }
 }
