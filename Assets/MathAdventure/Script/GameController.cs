@@ -35,7 +35,11 @@ public class GameController : MonoBehaviour
     [Space]
     [Header("UI Component")]
     [SerializeField]
-    TextMeshProUGUI CounterText;
+    TextMeshProUGUI counterText;
+    [SerializeField]
+    GameObject finishPanel;
+    [SerializeField]
+    TextMeshProUGUI finishText;
     Coroutine coroutineTemp;
 
     private void Awake() {
@@ -76,12 +80,12 @@ public class GameController : MonoBehaviour
     IEnumerator InitCounter(){
         for (int i = 3; i > 0; i--)
         {
-            CounterText.text = i+"";
+            counterText.text = i+"";
             yield return new WaitForSeconds(1);
         }
-        CounterText.text = "GO !!!";
+        counterText.text = "GO !!!";
         yield return new WaitForSeconds(1);
-        CounterText.gameObject.SetActive(false);
+        counterText.gameObject.SetActive(false);
         
         // Start Game
         intervalCorotine = StartCoroutine(AutoPlay());
@@ -113,17 +117,19 @@ public class GameController : MonoBehaviour
     }
     void Win(GameObject target){
         StopCoroutine(intervalCorotine);
-        CounterText.gameObject.SetActive(true);
+        finishPanel.gameObject.SetActive(true);
         switch(target.GetComponent<CharPropTemp>().data.side){
             case Side.HERO :
-                CounterText.text = "Hero Win!!!";
+                finishText.text = "Hero Win!!!";
             break;
             case Side.ENEMY :
-                CounterText.text = "Hero Lost";
-                CounterText.GetComponent<Animator>().enabled = false;
+                finishText.text = "Hero Lost";
             break;
         }
         
+    }
+    public void GotoMainMenu(){
+        Application.LoadLevel(0);
     }
     public void Die(GameObject target){
         charPlaying.Remove(
